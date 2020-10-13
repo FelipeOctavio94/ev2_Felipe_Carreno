@@ -25,7 +25,7 @@ export default{
         <button onclick="limpiar()">Limpiar</button>
         <p id="resp"></p>
     `,
-    aceptar:()=>{
+    aceptar: function(){
         var nombre = document.getElementById("txt1").Value;
         var edad = document.getElementById("txt2");
         var opciones = document.getElementById("grupo");
@@ -39,11 +39,17 @@ export default{
             }
         });
     
-            if (nombre != ""){
-                resp.innerHTML = `Hola ${nombre} eres ${estadoCivil}`;
+            if (nombre != "" && edad <=50 && edad >= 18){
+                resp.innerHTML = `Hola ${nombre} tienes ${edad}años, eres ${sexo}, tu numero es ${telefono} ,de la ciudad ${ciudad} `;
             }  else {
-                resp.innerHTML = "complete el nombre";
+                resp.innerHTML = "ingrese bien los parametros";
               }
     },
+
+    limpiar:function (){
+        txt1.value = "";
+        txt2.value = "";
+        txt3.value = "";
+    }
     
 };

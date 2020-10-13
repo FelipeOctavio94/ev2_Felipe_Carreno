@@ -4,7 +4,14 @@ import formulario from "./modules/datos.js";
 var caja = document.getElementById("caja");
 
 window.aceptar = formulario.aceptar;
+window.cargar = datos.cargar;
 
 document.getElementById("formulario").addEventListener("click",()=>{
     caja.innerHTML = formulario.data;
+    formulario.limpiar();
+})
+
+document.getElementById("datos").addEventListener("click",()=>{
+    caja.innerHTML = datos.data;
+    datos.cargar();
 })
