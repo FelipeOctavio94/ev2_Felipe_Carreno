@@ -1,5 +1,5 @@
-import datos from "./modules/formulario.js";
-import formulario from "./modules/datos.js";
+import datos from "./modules/datos.js";
+import formulario from "./modules/formulario.js";
 
 var caja = document.getElementById("caja");
 

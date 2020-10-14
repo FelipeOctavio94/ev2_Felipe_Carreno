@@ -23,7 +23,7 @@ export default{
 
         <button onclick="aceptar()">Aceptar</button>
         <button onclick="limpiar()">Limpiar</button>
-        <p id="resp"></p>
+        <p id="resp" class "respuesta"></p>
     `,
     aceptar: function(){
         var nombre = document.getElementById("txt1").Value;
@@ -31,19 +31,30 @@ export default{
         var opciones = document.getElementById("grupo");
         var telefono= document.getElementById("txt3");
         var ciu = document.getElementById("ciu").value;
-        var sexo = "";
+        var sexo = ""
+        var resp = document.getElementById("resp");
     
         opciones.array.forEach(item => {
             if (item.cheked){
                 sexo = item.value;
             }
         });
+
+            if(nombre ==""){
+                alert("Ingrese nombre");
+            }else if(edad >=50 && edad <=18){
+                alert("Edad entre 18 y 50 años");
+            }
+
+            respuesta +=`
+            <p>
+            su nombre es ${nombre} tiene la edad de ${edad} 
+            de sexo ${sexo} su telefono es ${telefono} y es de la ciudad ${ciudad}
+            </p>
+            `
+            
     
-            if (nombre != "" && edad <=50 && edad >= 18){
-                resp.innerHTML = `Hola ${nombre} tienes ${edad}años, eres ${sexo}, tu numero es ${telefono} ,de la ciudad ${ciudad} `;
-            }  else {
-                resp.innerHTML = "ingrese bien los parametros";
-              }
+            
     },
 
     limpiar:function (){
